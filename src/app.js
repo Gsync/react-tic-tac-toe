@@ -6,13 +6,29 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            message: "Hello, world"
+            p1sym: "X",
+            p2sym: "O",
+            currentTurn: "X",
+            board: [
+                "", "", "", "", "", "", "", "", "" 
+            ]
         }
     }
+
+    handleClick(index) {
+        this.state.board[index] = this.state.currentTurn
+        this.setState({
+            board: this.state.board,
+            currentTurn: this.state.currentTurn == this.state.p1sym ? this.state.p2sym : this.state.p1sym
+        })
+    }
+
     render() {
         return (
-            <div className="App">
-                <h2>Welcome to React</h2>
+            <div className="board">
+                {this.state.board.map((cell, index) => {
+                    return <div onClick={() => this.handleClick(index)} className="square">{cell}</div>
+                })}
             </div>
         );
     }
@@ -26,9 +42,9 @@ ReactDOM.render(<App />, document.querySelector('.container'));
 //     p1symb: 'X',
 //     p2symb: 'O',
 //     currentTurn: 'X',
-//     board: [
-//        "", "", "", "", "", "", "", "", "" 
-//     ]
+    // board: [
+    //    "", "", "", "", "", "", "", "", "" 
+    // ]
 // };
 
 // var render = function(state) {
