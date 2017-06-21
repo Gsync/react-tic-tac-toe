@@ -19,5 +19,6 @@
 }
 
 .square:hover {
+    cursor: pointer;
     background-color: #80cd92;
 }
