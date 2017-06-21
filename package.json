@@ -26,5 +26,10 @@
     "react-dom": "^15.6.1",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.5.0"
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "css-loader": "^0.28.4",
+    "style-loader": "^0.18.2"
   }
 }
