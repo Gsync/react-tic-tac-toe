@@ -16,11 +16,14 @@ class App extends Component {
     }
 
     handleClick(index) {
-        this.state.board[index] = this.state.currentTurn
-        this.setState({
-            board: this.state.board,
-            currentTurn: this.state.currentTurn == this.state.p1sym ? this.state.p2sym : this.state.p1sym
-        })
+        if (this.state.board[index] === "") {
+            this.state.board[index] = this.state.currentTurn
+            this.setState({
+                board: this.state.board,
+                currentTurn: this.state.currentTurn == this.state.p1sym ? this.state.p2sym : this.state.p1sym
+            })
+        }
+        
     }
 
     render() {
