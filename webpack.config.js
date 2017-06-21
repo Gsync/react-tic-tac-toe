@@ -11,7 +11,7 @@ module.exports = {
   },
   devServer: {
     inline: true,
-    contentBase: '__dirname',
+    contentBase: './',
     port: 3000
   },
   module: {
