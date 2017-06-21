@@ -1,38 +1,62 @@
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
+import './css/main.css';
 
-var gameState = {
-    p1symb: 'X',
-    p2symb: 'O',
-    currenTurn: 'X',
-    board: [
-       "", "", "", "", "", "", "", "", "" 
-    ]
-};
+class App extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            message: "Hello, world"
+        }
+    }
+    render() {
+        return (
+            <div className="App">
+                <h2>Welcome to React</h2>
+            </div>
+        );
+    }
+}
 
-var render = function(state) {
-    return "<div class='board'>" +
-    "<div class='square'>" + state.board[0] + "</div>" +
-    "<div class='square'>" + state.board[1] + "</div>" +
-    "<div class='square'>" + state.board[2] + "</div>" +
-    "<div class='square'>" + state.board[3] + "</div>" +
-    "<div class='square'>" + state.board[4] + "</div>" +
-    "<div class='square'>" + state.board[5] + "</div>" +
-    "<div class='square'>" + state.board[6] + "</div>" +
-    "<div class='square'>" + state.board[7] + "</div>" +
-    "<div class='square'>" + state.board[8] + "</div>" +
-    "</div>"
-};
-document.querySelector('.container').innerHTML = render(gameState);
+ReactDOM.render(<App />, document.querySelector('.container'));
+
+
+
+// var gameState = {
+//     p1symb: 'X',
+//     p2symb: 'O',
+//     currentTurn: 'X',
+//     board: [
+//        "", "", "", "", "", "", "", "", "" 
+//     ]
+// };
+
+// var render = function(state) {
+//     document.querySelector(".container").innerHTML = "<div class='board'>" +
+//     "<div class='square' data-square-id='0'>" + state.board[0] + "</div>" +
+//     "<div class='square' data-square-id='1'>" + state.board[2] + "</div>" +
+//     "<div class='square' data-square-id='2'>" + state.board[3] + "</div>" +
+//     "<div class='square' data-square-id='3'>" + state.board[1] + "</div>" +
+//     "<div class='square' data-square-id='4'>" + state.board[4] + "</div>" +
+//     "<div class='square' data-square-id='5'>" + state.board[5] + "</div>" +
+//     "<div class='square' data-square-id='6'>" + state.board[6] + "</div>" +
+//     "<div class='square' data-square-id='7'>" + state.board[7] + "</div>" +
+//     "<div class='square' data-square-id='8'>" + state.board[8] + "</div>" +
+//     "</div>"
+// };
+// render(gameState);
 // var board = document.querySelector('.board');
 // board.addEventListener('click', function(e) {
-//     e.target.innerText = currentTurn;
-//     currentTurn = currentTurn === p1symb ? p2symb : p1symb;
-//     if (checkWinner()) {
-//         alert("SOMEBODY WON!");
-//     };
+//     var squareIndex = parseInt(e.target.dataset['squareId'], 10);
+//     gameState.board[squareIndex] = gameState.currentTurn
+//     gameState.currentTurn = gameState.currentTurn === gameState.p1symb ? gameState.p2symb : gameState.p1symb;
+   
+//    render(gameState);
+   
 // });
 
 // function checkWinner() {
-//     var squares = Array.prototype.slice.call(document.querySelectorAll('.square'), 0);
+//     var squares = gameState.board;
 //     var symbols = squares.map(function(s) {
 //         return s.innerText;
 //     });
